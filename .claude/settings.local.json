@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gws --version)",
+      "Bash(gws sheets *)",
+      "PowerShell(Get-Command gws -ErrorAction SilentlyContinue)",
+      "WebSearch",
+      "Bash(gh --version)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(process.platform, process.arch\\)\")",
+      "Bash(curl -sL https://api.github.com/repos/googleworkspace/cli/releases/latest)",
+      "Bash(mkdir -p 'C:\\\\Users\\\\HENRY MORTEJO/gws-cli')",
+      "Read(//c/Users/HENRY MORTEJO/**)",
+      "Bash(curl -sL -o gws.zip https://github.com/googleworkspace/cli/releases/download/v0.22.5/google-workspace-cli-x86_64-pc-windows-msvc.zip)",
+      "PowerShell(Expand-Archive -Path \"$HOME\\\\gws-cli\\\\gws.zip\" -DestinationPath \"$HOME\\\\gws-cli\" -Force; Get-ChildItem \"$HOME\\\\gws-cli\" -Recurse)",
+      "Bash('C:\\\\Users\\\\HENRY MORTEJO/gws-cli/gws.exe' --version)",
+      "Bash(gcloud --version)",
+      "PowerShell(Get-Command winget -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command choco -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command gcloud -ErrorAction SilentlyContinue)",
+      "PowerShell(winget install --id Google.CloudSDK -e --accept-package-agreements --accept-source-agreements)"
+    ]
+  }
+}
