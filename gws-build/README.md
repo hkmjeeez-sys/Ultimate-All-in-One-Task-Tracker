@@ -14,6 +14,28 @@ well-formed, but **none of it has actually been run against a live Google
 Sheet**. Run it yourself wherever `gws` is installed and authenticated
 (e.g. your Windows machine per `1. Install GWS CLI.docx`).
 
+## Interactive preview
+
+`preview.html` is a self-contained, offline mockup of the tracker — open it
+directly in a browser (no server needed). It seeds from the same 35-row
+Master Tasks dataset and 5 recurring templates as the build scripts, then
+recomputes everything in JavaScript rather than Google Sheets formulas:
+
+- **Dashboard, Master Tasks, Kanban Board, Monthly/Weekly Calendar, Gantt
+  Chart, Decision Matrix, Recurring Tasks Setup, and Analytics are all live.**
+  Edit any cell on Master Tasks (or the Recurring Tasks Setup table) and
+  every other tab recomputes instantly, mirroring the `COUNTIF`/`COUNTIFS`/
+  `FILTER`/`VLOOKUP` chains the real spreadsheet will run.
+- "Today" comes from your actual clock, so overdue flags, the Gantt's
+  today-column, and recurring next-due dates all shift correctly day to day.
+- It's a **preview of the design and behavior only** — it doesn't write
+  anything to Google Sheets. Reference Data and Recurring Engine stay dimmed
+  since they're hidden helper sheets in the real workbook too.
+- Known approximation: the Sheets API has no field for custom colors on
+  individual pie slices or bars within a single chart series, so the two
+  donuts and the Priority Distribution bar use a default palette here instead
+  of the exact Status/Priority hexes (everything else gets exact colors).
+
 ## Prerequisites
 
 - `gws` installed and authenticated (`gws auth setup`, or one of the other
